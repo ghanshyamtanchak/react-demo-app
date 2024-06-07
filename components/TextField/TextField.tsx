@@ -1,11 +1,8 @@
-import { forwardRef } from "react";
-import { TextFieldProps, useTextField } from "./useTextField";
+import { FC } from "react";
+import { TextFieldProps } from "./types";
 
-const TextField = forwardRef<"input", TextFieldProps>((props, ref) => {
-  const { domRef } = useTextField({ ref });
-  return <TextField ref={domRef} {...props} />;
-});
-
-TextField.displayName = "TextField";
+const TextField: FC<TextFieldProps> = (props) => {
+  return <TextField {...props} />;
+};
 
 export default TextField;

@@ -1,11 +1,11 @@
-import SignUpForm from "@/forms/SignUpForm/SignUpForm";
+import SignUp from "@/modules/SignUp/SignUp";
 
-export default function SignUp() {
+export default function SignUpPage() {
   return (
     <main className="flex h-screen items-center justify-center">
-      <div className="bg-gray-50 w-1/4">
-        <h1 className="font-sans font">Geist</h1>
-        <SignUpForm />
+      <div className="">
+        <h1 className="font-sans font">Sign Up</h1>
+        <SignUp />
       </div>
     </main>
   );
