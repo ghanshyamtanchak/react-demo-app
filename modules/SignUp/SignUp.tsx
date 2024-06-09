@@ -11,12 +11,11 @@ const SignUp = () => {
       confirmPassword: "",
     },
     onSubmit: async ({ value }) => {
-      // Do something with form data
-      console.log(value);
+      console.log(value, "value");
     },
   });
   return (
-    <div>
+    <div className="border p-6">
       <form
         onSubmit={(e) => {
           e.preventDefault();
@@ -24,16 +23,17 @@ const SignUp = () => {
           form.handleSubmit();
         }}
       >
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-3">
           <form.Field name="fullName">
             {(field) => (
               <>
                 <input
-                  className="border border-gray-400"
+                  className="border border-gray-400 rounded py-2 px-2 text-sm outline-none"
                   name={field.name}
                   value={field.state.value}
                   onBlur={field.handleBlur}
                   onChange={(e) => field.handleChange(e.target.value)}
+                  placeholder="Enter your full name"
                 />
               </>
             )}
@@ -42,10 +42,12 @@ const SignUp = () => {
             {(field) => (
               <>
                 <input
+                  className="border border-gray-400 rounded py-2 px-2 text-sm outline-none"
                   name={field.name}
                   value={field.state.value}
                   onBlur={field.handleBlur}
                   onChange={(e) => field.handleChange(e.target.value)}
+                  placeholder="Enter your email"
                 />
               </>
             )}
@@ -54,10 +56,12 @@ const SignUp = () => {
             {(field) => (
               <>
                 <input
+                  className="border border-gray-400 rounded py-2 px-2 text-sm outline-none"
                   name={field.name}
                   value={field.state.value}
                   onBlur={field.handleBlur}
                   onChange={(e) => field.handleChange(e.target.value)}
+                  placeholder="Password"
                 />
               </>
             )}
@@ -66,16 +70,20 @@ const SignUp = () => {
             {(field) => (
               <>
                 <input
+                  className="border border-gray-400 rounded py-2 px-2 text-sm outline-none"
                   name={field.name}
                   value={field.state.value}
                   onBlur={field.handleBlur}
                   onChange={(e) => field.handleChange(e.target.value)}
+                  placeholder="Confirm Password"
                 />
               </>
             )}
           </form.Field>
         </div>
-        <Button type="submit">Save</Button>
+        <Button className="bg-orange-600" type="submit">
+          Save
+        </Button>
       </form>
     </div>
   );
